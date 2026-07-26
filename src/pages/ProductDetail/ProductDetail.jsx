@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import books from "../../data/books";
 import { CartContext } from "../../context/CartContext/CartContext";
@@ -7,6 +7,7 @@ import "./ProductDetail.css";
 export const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart } = useContext(CartContext);
+  const [added, setAdded] = useState(false);
 
   const book = books.find(
     (book) => book.id === Number(id)
@@ -15,6 +16,15 @@ export const ProductDetail = () => {
   if (!book) {
     return <h2>Libro no encontrado</h2>;
   }
+  const handleAddToCart = () => {
+  addToCart(book);
+
+  setAdded(true);
+
+  setTimeout(() => {
+    setAdded(false);
+  }, 1500);
+};
 
   return (
     <main className="product-detail">
@@ -30,9 +40,9 @@ export const ProductDetail = () => {
         <p>{book.category}</p>
         <strong>${book.price}</strong>
 
-        <button onClick={() => addToCart(book)}>
-          Agregar al carrito
-        </button>
+        <button onClick={handleAddToCart}>
+  {added ? "✓ Agregado" : "Agregar al carrito"}
+</button>
       </section>
     </main>
   );

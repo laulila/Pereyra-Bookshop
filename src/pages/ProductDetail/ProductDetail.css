@@ -28,4 +28,10 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  .product-info button {
+  transition: all 0.3s ease;
+}
+}
+.product-info button.added {
+  background-color: #2e7d32;
 }
