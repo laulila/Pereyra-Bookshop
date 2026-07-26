@@ -38,7 +38,12 @@ export const ProductDetail = () => {
         <h1>{book.title}</h1>
         <h3>{book.author}</h3>
         <p>{book.category}</p>
-        <strong>${book.price}</strong>
+       <p className="price">
+  ${book.price}
+</p>
+<p className="description">
+  {book.description}
+</p>
 
         <button onClick={handleAddToCart}>
   {added ? "✓ Agregado" : "Agregar al carrito"}
