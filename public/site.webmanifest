@@ -1,0 +1,32 @@
+{
+  "name": "Pereyra Bookshop",
+  "short_name": "Bookshop",
+  "description": "Descubrí clásicos, novelas y libros para todos los lectores en Pereyra Bookshop.",
+  "lang": "es-AR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "id": "/",
+  "background_color": "#f8f5f2",
+  "theme_color": "#3e2c23",
+  "orientation": "portrait",
+  "categories": [
+    "books",
+    "shopping",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
