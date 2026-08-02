@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext/CartContext";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Checkout.css";
 
 export const Checkout = () => {
@@ -20,7 +21,17 @@ export const Checkout = () => {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+if (cart.length === 0) {
+  return (
+    <main className="checkout">
+      <h1>Tu carrito está vacío 🛒</h1>
 
+      <Link to="/">
+        Volver a la tienda
+      </Link>
+    </main>
+  );
+}
 
   const handleChange = (e) => {
     setBuyer({
@@ -56,6 +67,10 @@ export const Checkout = () => {
     <main className="checkout">
 
       <h1>Finalizar compra</h1>
+
+      <Link to="/cart" className="back-cart">
+  ← Volver al carrito
+</Link>
 
       <section className="checkout-summary">
 

@@ -40,6 +40,9 @@
   cursor: pointer;
 
   transition: var(--transition);
+
+  display: inline-block;
+  text-decoration: none;
 }
 
 .hero-button:hover {

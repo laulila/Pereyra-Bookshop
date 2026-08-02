@@ -52,3 +52,6 @@ img {
 .main-content {
   flex: 1;
 }
+#books {
+  scroll-margin-top: 90px;
+}

@@ -1,4 +1,5 @@
 import "./Hero.css";
+
 import heroBooks from "../../assets/images/hero-books.webp";
 export const Hero = () => {
   return (
@@ -12,7 +13,9 @@ export const Hero = () => {
           Explore a carefully selected collection of books for every reader.
         </p>
 
-        <button className="hero-button">Explore Books</button>
+ <a href="#books" className="hero-button">
+  Explore Books
+</a>
       </div>
     </section>
   );
