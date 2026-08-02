@@ -3,7 +3,7 @@ import { CartContext } from "../../context/CartContext/CartContext";
 import "./Cart.css";
 
 export const Cart = () => {
-  const { cart, removeFromCart, clearCart } = useContext(CartContext);
+  const { cart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity } = useContext(CartContext);
 
   const total = cart.reduce(
     (acc, item) => acc + item.price * item.quantity,
@@ -25,12 +25,28 @@ export const Cart = () => {
                 alt={item.title}
               />
 
-              <div className="cart-info">
-                <h2>{item.title}</h2>
-                <p>{item.author}</p>
-                <p>Cantidad: {item.quantity}</p>
-                <strong>${item.price}</strong>
-              </div>
+            <div className="cart-info">
+  <h2>{item.title}</h2>
+  <p>{item.author}</p>
+
+  <p>Precio: ${item.price}</p>
+
+  <div className="quantity-controls">
+    <button onClick={() => decreaseQuantity(item.id)}>
+      −
+    </button>
+
+    <span>{item.quantity}</span>
+
+    <button onClick={() => increaseQuantity(item.id)}>
+      +
+    </button>
+  </div>
+
+  <strong>
+    Subtotal: ${item.price * item.quantity}
+  </strong>
+</div>
 
               <div className="cart-actions">
                 <button onClick={() => removeFromCart(item.id)}>
