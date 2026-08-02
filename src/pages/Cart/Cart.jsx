@@ -58,7 +58,7 @@ export const Cart = () => {
 
           <div className="total">
             <h2>Total: ${total}</h2>
-<Link to="/checkout">
+<Link to="/checkout" className="checkout-link">
   Finalizar compra
 </Link>
             <button onClick={clearCart}>

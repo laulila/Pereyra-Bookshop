@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 export const OrderSuccess = () => {
 
   const { state: order } = useLocation();
@@ -40,6 +40,10 @@ export const OrderSuccess = () => {
       <h2>
         Total: ${order.total}
       </h2>
+
+      <Link to="/" className="back-home">
+  Volver a la tienda
+</Link>
 
     </main>
   );

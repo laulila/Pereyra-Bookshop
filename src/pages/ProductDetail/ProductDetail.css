@@ -70,3 +70,43 @@
   color: #555;
   line-height: 1.8;
 }
+
+  
+@media (max-width: 768px) {
+
+  .product-detail {
+    flex-direction: column;
+    gap: 30px;
+    margin: 40px auto;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .product-image {
+    width: 240px;
+    height: 360px;
+  }
+
+  .product-info {
+    width: 100%;
+    text-align: center;
+  }
+
+  .product-info h1 {
+    font-size: 1.7rem;
+  }
+
+  .product-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .price {
+    font-size: 1.6rem;
+    margin: 20px 0;
+  }
+
+  .description {
+    line-height: 1.6;
+  }
+
+}

@@ -1,0 +1,40 @@
+.order-success {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 35px;
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.order-success h1 {
+  color: #5b3a29;
+  margin-bottom: 20px;
+}
+
+.order-success h2 {
+  margin: 20px 0;
+}
+
+.order-success h3 {
+  margin-top: 30px;
+}
+
+.order-success p {
+  margin: 10px 0;
+}
+.back-home {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: #5b3a29;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.back-home:hover {
+  background: #8b5e3c;
+}

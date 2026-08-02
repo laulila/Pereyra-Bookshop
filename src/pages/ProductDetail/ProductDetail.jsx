@@ -44,8 +44,10 @@ export const ProductDetail = () => {
 <p className="description">
   {book.description}
 </p>
-
-        <button onClick={handleAddToCart}>
+<button 
+  onClick={handleAddToCart}
+  aria-label="Agregar libro al carrito"
+>
   {added ? "✓ Agregado" : "Agregar al carrito"}
 </button>
       </section>
