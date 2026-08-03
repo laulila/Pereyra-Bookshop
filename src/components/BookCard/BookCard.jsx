@@ -17,8 +17,11 @@ export const BookCard = ({ book }) => {
 
         <p>{book.category}</p>
 
-        <strong>${book.price}</strong>
-
+        <strong>
+  {book.price
+    ? `$${book.price.toLocaleString("es-AR")}`
+    : "$Consultar"}
+</strong>
         <Link to={`/product/${book.id}`} className="details-btn">
           Ver detalle
         </Link>
