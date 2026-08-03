@@ -24,9 +24,14 @@ export const Navbar = () => {
           </li>
 
           <li>
-            <Link to="/cart">
-              🛒 Carrito ({totalItems})
-            </Link>
+         <Link to="/cart" className="cart-link">
+  🛒 Carrito
+  {totalItems > 0 && (
+    <span className="cart-count">
+      {totalItems}
+    </span>
+  )}
+</Link>   
           </li>
         </ul>
       </nav>

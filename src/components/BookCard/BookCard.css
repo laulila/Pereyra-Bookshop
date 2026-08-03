@@ -53,3 +53,31 @@
 .details-btn:hover {
   background: #5a4032;
 }
+.book-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.details-btn {
+  margin-top: auto;
+  text-align: center;
+}
+@media (max-width: 600px) {
+
+  .book-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .book-image {
+    height: 320px;
+  }
+
+}

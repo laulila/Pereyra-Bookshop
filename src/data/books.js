@@ -5,6 +5,7 @@ const books = [
     author: "Antoine de Saint-Exupéry",
     category: "Clásicos",
     price: 15000,
+    printed: "Paris, 1970",
     image: "/books/principito.jpg"
   },
   {
@@ -13,6 +14,7 @@ const books = [
     author: "Gabriel García Márquez",
     category: "Novela",
     price: 20000,
+    printed: "Buenos Aires, 1967",
     image: "/books/cien.jpg"
   },
   {
@@ -21,6 +23,7 @@ const books = [
     author: "Jane Austen",
     category: "Romance",
     price: 18000,
+    printed: "Londres, 1813",
     image: "/books/orgullo.jpg"
   }
 ];

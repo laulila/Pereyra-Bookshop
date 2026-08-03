@@ -38,6 +38,10 @@ export const ProductDetail = () => {
         <h1>{book.title}</h1>
         <h3>{book.author}</h3>
         <p>{book.category}</p>
+        <p className="printed">
+  Printed in {book.printed}
+</p>
+        
        <p className="price">
   ${book.price}
 </p>

@@ -72,7 +72,11 @@
   line-height: 1.8;
 }
 
-  
+  .printed {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 16px;
+}
 @media (max-width: 768px) {
 
   .product-detail {

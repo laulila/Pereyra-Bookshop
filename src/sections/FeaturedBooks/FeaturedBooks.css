@@ -14,7 +14,18 @@
 
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 280px));
   gap: 30px;
-  justify-items: center;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+
+  .featured-books {
+    padding: 50px 15px;
+  }
+
+  .featured-container h2 {
+    font-size: 1.6rem;
+  }
+
 }

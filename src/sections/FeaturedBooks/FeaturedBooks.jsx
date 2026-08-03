@@ -2,7 +2,15 @@ import { BookCard } from "../../components/BookCard/BookCard";
 import books from "../../data/books";
 import "./FeaturedBooks.css";
 
-function FeaturedBooks() {
+function FeaturedBooks({ selectedCategory }) {
+
+  const filteredBooks =
+    selectedCategory === "Todas"
+      ? books
+      : books.filter(
+          (book) => book.category === selectedCategory
+        );
+
   return (
     <section className="featured-books">
       <div className="featured-container">
@@ -10,10 +18,10 @@ function FeaturedBooks() {
         <h2>Libros destacados</h2>
 
         <div className="books-grid">
-          {books.map((book) => (
-            <BookCard 
-              key={book.id} 
-              book={book} 
+          {filteredBooks.map((book) => (
+            <BookCard
+              key={book.id}
+              book={book}
             />
           ))}
         </div>
