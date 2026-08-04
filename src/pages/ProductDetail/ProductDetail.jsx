@@ -19,6 +19,7 @@ export const ProductDetail = () => {
         const bookSnap = await getDoc(bookRef);
 
         if (bookSnap.exists()) {
+          
           setBook({
             id: bookSnap.id,
             ...bookSnap.data(),
@@ -63,9 +64,9 @@ export const ProductDetail = () => {
         <p className="price">
           {book.price ? `$${book.price.toLocaleString("es-AR")}` : "$Consultar"}
         </p>
-        <p className="description">
-  {book.description || "Descripción próximamente"}
-</p>
+       {book.description && (
+  <p className="description">{book.description}</p>
+)}
         <button onClick={handleAddToCart} aria-label="Agregar libro al carrito">
           {added ? "✓ Agregado" : "Agregar al carrito"}
         </button>
