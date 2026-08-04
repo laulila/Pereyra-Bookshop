@@ -10,13 +10,14 @@ function FeaturedBooks({ selectedCategory }) {
   useEffect(() => {
     const getBooks = async () => {
       try {
-        const booksCollection = collection(db, "books");
-        const querySnapshot = await getDocs(booksCollection);
+        const querySnapshot = await getDocs(collection(db, "books"));
 
         const booksList = querySnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
+
+        console.log(booksList);
 
         setBooks(booksList);
       } catch (error) {
@@ -30,9 +31,7 @@ function FeaturedBooks({ selectedCategory }) {
   const filteredBooks =
     selectedCategory === "Todas"
       ? books
-      : books.filter(
-          (book) => book.category === selectedCategory
-        );
+      : books.filter((book) => book.category === selectedCategory);
 
   return (
     <section className="featured-books">
@@ -41,10 +40,7 @@ function FeaturedBooks({ selectedCategory }) {
 
         <div className="books-grid">
           {filteredBooks.map((book) => (
-            <BookCard
-              key={book.id}
-              book={book}
-            />
+            <BookCard key={book.id} book={book} />
           ))}
         </div>
       </div>

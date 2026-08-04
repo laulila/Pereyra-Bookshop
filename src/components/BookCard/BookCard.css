@@ -5,6 +5,10 @@
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .book-card:hover {
@@ -20,6 +24,9 @@
 
 .book-info {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .book-info h3 {
@@ -41,7 +48,8 @@
 
 .details-btn {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: auto;
+  text-align: center;
   text-decoration: none;
   background: #3e2c23;
   color: white;
@@ -53,24 +61,8 @@
 .details-btn:hover {
   background: #5a4032;
 }
-.book-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
 
-.book-info {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.details-btn {
-  margin-top: auto;
-  text-align: center;
-}
 @media (max-width: 600px) {
-
   .book-card {
     width: 100%;
     max-width: 300px;
@@ -79,5 +71,4 @@
   .book-image {
     height: 320px;
   }
-
 }

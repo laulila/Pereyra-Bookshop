@@ -4,7 +4,10 @@ const categories = [
   "Todas",
   "Clásicos",
   "Novela",
-  "Romance"
+  "Romance",
+  "Ficción",
+  "Autoayuda", 
+  "Varios"
 ];
 
 export const Categories = ({
