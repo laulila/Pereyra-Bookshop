@@ -85,7 +85,7 @@ export function Admin() {
         {
           title: editingBook.title,
           author: editingBook.author,
-          category: editingBook.category,
+          category: editingBook.category.trim(),
           price: editingBook.price,
           image: editingBook.image,
           printed: editingBook.printed
@@ -126,7 +126,7 @@ export function Admin() {
         {
           title: newBook.title,
           author: newBook.author,
-          category: newBook.category,
+          category: newBook.category.trim(),
           price: Number(newBook.price),
           image: newBook.image,
           printed: newBook.printed
