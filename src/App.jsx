@@ -7,42 +7,39 @@ import { Checkout } from "./pages/Checkout/Checkout";
 import { OrderSuccess } from "./pages/OrderSuccess/OrderSuccess";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Footer } from "./components/Footer/Footer";
+import { Admin } from "./pages/Admin/Admin";
+import { ProtectedRoute } from "./routes/ProtectedRoute";
+import { Login } from "./pages/Login/Login";
 function App() {
   return (
-    
-  <div className="app">
+    <div className="app">
+      <Navbar />
 
-    <Navbar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-    <main className="main-content">
-      <Routes>
-        <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
 
-        <Route 
-          path="/product/:id" 
-          element={<ProductDetail />} 
-        />
+          <Route path="/cart" element={<Cart />} />
 
-        <Route 
-          path="/cart" 
-          element={<Cart />} 
-        />
+          <Route path="/checkout" element={<Checkout />} />
 
-        <Route 
-          path="/checkout" 
-          element={<Checkout />} 
-        />
+          <Route path="/order/:id" element={<OrderSuccess />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </main>
 
-        <Route 
-          path="/order/:id" 
-          element={<OrderSuccess />} 
-        />
-      </Routes>
-    </main>
-
-    <Footer />
-
-  </div>
-);
+      <Footer />
+    </div>
+  );
 }
-  export default App;
+export default App;

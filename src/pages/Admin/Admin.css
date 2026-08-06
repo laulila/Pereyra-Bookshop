@@ -1,0 +1,114 @@
+.admin {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 40px;
+}
+
+.admin h1 {
+  margin-bottom: 1rem;
+}
+
+.admin-books {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.admin-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.admin-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.admin-actions button {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #d4a373;
+}
+
+.delete-btn {
+  background-color: #8b5e3c;
+  color: white;
+}
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.edit-form input {
+  padding: 8px;
+}
+const handleUpdate = async () => {
+
+  try {
+
+    await updateDoc(
+      doc(db, "books", editingBook.id),
+      {
+        title: editingBook.title,
+        author: editingBook.author,
+        category: editingBook.category,
+        price: editingBook.price,
+        image: editingBook.image,
+        printed: editingBook.printed
+      }
+    );
+
+    setBooks((prevBooks) =>
+      prevBooks.map((book) =>
+        book.id === editingBook.id
+          ? editingBook
+          : book
+      )
+    );
+
+    setEditingBook(null);
+
+    alert("Libro actualizado correctamente");
+
+  } catch (error) {
+
+    console.error("Error actualizando libro:", error);
+
+  }
+
+};
+.new-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.new-book-form input {
+  padding: 10px;
+}
+
+.new-book-form button {
+  padding: 10px;
+  cursor: pointer;
+}
+.logout-btn {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
