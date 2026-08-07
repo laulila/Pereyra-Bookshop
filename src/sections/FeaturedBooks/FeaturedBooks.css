@@ -72,3 +72,9 @@
   color: #666;
   padding: 2rem 0;
 }
+.search-icon {
+  font-size: 1.2rem;
+  color: #6b4f3b;
+  margin-right: 10px;
+  flex-shrink: 0;
+}

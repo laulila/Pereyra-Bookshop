@@ -54,41 +54,9 @@
 .edit-form input {
   padding: 8px;
 }
-const handleUpdate = async () => {
 
-  try {
 
-    await updateDoc(
-      doc(db, "books", editingBook.id),
-      {
-        title: editingBook.title,
-        author: editingBook.author,
-        category: editingBook.category,
-        price: editingBook.price,
-        image: editingBook.image,
-        printed: editingBook.printed
-      }
-    );
 
-    setBooks((prevBooks) =>
-      prevBooks.map((book) =>
-        book.id === editingBook.id
-          ? editingBook
-          : book
-      )
-    );
-
-    setEditingBook(null);
-
-    alert("Libro actualizado correctamente");
-
-  } catch (error) {
-
-    console.error("Error actualizando libro:", error);
-
-  }
-
-};
 .new-book-form {
   display: flex;
   flex-direction: column;
