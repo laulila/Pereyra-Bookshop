@@ -2,57 +2,178 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   position: sticky;
   top: 0;
   z-index: 1000;
 
-  padding: 20px 40px;
+  padding: 16px 40px;
 
-  background-color:  #54310f;
+  background: #54310f;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
+
+
+/* LOGO */
 
 .navbar-logo {
   color: white;
   text-decoration: none;
 
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  transition: opacity 0.3s ease;
 }
+
+.navbar-logo:hover {
+  opacity: 0.85;
+}
+
+
+/* LINKS */
 
 .navbar-links {
   display: flex;
-  gap: 25px;
+  align-items: center;
+  gap: 30px;
 
   list-style: none;
+
   margin: 0;
   padding: 0;
 }
 
+
 .navbar-links a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
   color: white;
   text-decoration: none;
 
-  font-size: 18px;
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.navbar-links a:hover {
-  opacity: 0.7;
+
+/* LÍNEA DE HOVER */
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background: #d4a373;
+
+  transition: width 0.3s ease;
 }
+
+
+.navbar-links a:hover {
+  color: #f1d2ae;
+}
+
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+
+/* CARRITO */
+
 .cart-link {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+
+/* CONTADOR */
+
 .cart-count {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
-  width: 22px;
+
+  min-width: 22px;
   height: 22px;
+
+  padding: 0 5px;
+
   border-radius: 50%;
+
   background: #d4a373;
   color: white;
-  font-size: 0.8rem;
-  font-weight: bold;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* TABLET */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 14px 20px;
+  }
+
+  .navbar-logo {
+    font-size: 1.25rem;
+  }
+
+  .navbar-links {
+    gap: 18px;
+  }
+
+  .navbar-links a {
+    font-size: 0.95rem;
+  }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 13px 15px;
+  }
+
+  .navbar-logo {
+    font-size: 1.1rem;
+  }
+
+  .navbar-links {
+    gap: 12px;
+  }
+
+  .navbar-links a {
+    font-size: 0.9rem;
+  }
+
+  .cart-link {
+    gap: 5px;
+  }
+
 }
